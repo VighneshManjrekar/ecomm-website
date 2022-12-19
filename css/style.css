@@ -15,7 +15,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 html {
@@ -23,8 +23,6 @@ html {
     font-family: var(--primary-font);
     color: var(--primary-black);
     -webkit-tap-highlight-color: transparent;
-    width: 100vw;
-    overflow-x: hidden;
 }
 
 h1,
@@ -298,6 +296,65 @@ a {
 }
 
 
+/* Product Section  */
+
+#product-section {
+    padding: 50px 0;
+    /* padding: 50px 100px; */
+    text-align: center;
+}
+
+
+.pro-container {
+    /* display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px; */
+}
+
+.pro-inner-container {
+    padding: 0 100px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.pro {
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid #cce7d0;
+    cursor: pointer;
+    border-radius: 25px;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    margin: 15px 0;
+    transition: 0.2s ease;
+    position: relative;
+    height: 230px;
+}
+
+.pro:hover {
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+}
+
+.pro img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.product-heading {
+    padding: 10px 0;
+    font-size: 40px;
+    text-align: center;
+}
+
+.product-para {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+
 
 /* Testinomial Section  */
 
@@ -326,6 +383,51 @@ a {
     height: 100px;
     border-radius: 50%;
     background-color: var(--primary-gray);
+}
+
+
+/* NewsLetter Section  */
+
+#newsletter {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    background-image: url('../assests/b14.png');
+    background-position: 20% 30%;
+    background-repeat: no-repeat;
+    background-color: #041e42;
+    padding: 50px 100px;
+}
+
+#newsletter h4 {
+    font: 22px;
+    color: #fff;
+    font-weight: 700;
+}
+
+#newsletter p {
+    font-size: 14px;
+    font-weight: 600;
+    color: #818ea0;
+}
+
+#newsletter p span {
+    color: #ffbd27;
+}
+
+
+#newsletter button {
+    background-color: #088178;
+    color: #fff;
+    white-space: nowrap;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
 }
 
 
@@ -428,6 +530,10 @@ a {
 
 @media screen and (max-width:730px) {
 
+    .pro-inner-container {
+        justify-content: space-around;
+    }
+
     #close-icon {
         display: none;
         z-index: 99999;
@@ -437,17 +543,25 @@ a {
         display: block;
     }
 
+    .nav-item {
+        display: none;
+    }
+
     .nav-list {
-        overflow-x: hidden;
         position: absolute;
         top: 0;
-        right: -70vw;
-        width: 70vw;
+        right: 0;
+        width: 0px;
+        /* right: -70vw; */
+        /* width: 70vw; */
+        transform-origin: right;
         height: 100vh;
         background-color: white;
         flex-direction: column;
         padding: 40px 0 0 20px;
         transition: all 0.3s ease-in;
+        /* display: none; */
+
     }
 
     .hero-img {
@@ -503,6 +617,15 @@ a {
 
     .menu-icon {
         display: block;
+    }
+
+    #newsletter {
+        justify-content: center;
+        align-items: center;
+    }
+
+    #newsletter button {
+        margin-top: 10px;
     }
 }
 
